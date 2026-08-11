@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#070711">
+<title>👑 Saud Web</title>
+
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
+
+html{
+scroll-behavior:smooth
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#05050b;
+color:#fff;
+min-height:100vh;
+overflow-x:hidden;
+padding-bottom:85px;
+}
+
+/* ===== PREMIUM BACKGROUND ===== */
+
+body:before{
+content:"";
+position:fixed;
+width:520px;
+height:520px;
+border-radius:50%;
+background:#7c3aed;
+filter:blur(150px);
+opacity:.25;
+top:-220px;
+left:-220px;
+z-index:-5;
+animation:float1 10s infinite alternate ease-in-out;
+}
+
+body:after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+border-radius:50%;
+background:#00d9ff;
+filter:blur(150px);
+opacity:.17;
+right:-220px;
+bottom:-220px;
+z-index:-5;
+animation:float2 12s infinite alternate ease-in-out;
+}
+
+@keyframes float1{
+to{transform:translate(230px,180px)}
+}
+
+@keyframes float2{
+to{transform:translate(-220px,-170px)}
+}
+
+/* EXTRA LIGHT */
+
+.light{
+position:fixed;
+width:250px;
+height:250px;
+border-radius:50%;
+filter:blur(100px);
+opacity:.12;
+background:#ff1493;
+top:40%;
+left:40%;
+z-index:-4;
+animation:lightMove 15s infinite alternate;
+}
+
+@keyframes lightMove{
+to{
+transform:translate(180px,-120px) scale(1.3)
+}
+}
+
+/* ===== INTRO ===== */
+
+.intro{
+position:fixed;
+inset:0;
+z-index:9999;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#020207;
+animation:introHide 1s ease 3.3s forwards;
+}
+
+.introBox{
+text-align:center;
+padding:20px;
+}
+
+.introSmall{
+font-size:10px;
+letter-spacing:7px;
+color:#777;
+margin-bottom:22px;
+}
+
+.introName{
+font-size:clamp(45px,14vw,100px);
+font-weight:1000;
+letter-spacing:-6px;
+background:linear-gradient(
+90deg,
+#00eaff,
+#8b5cf6,
+#ff2da6,
+#00eaff
+);
+background-size:300%;
+-webkit-background-clip:text;
+color:transparent;
+animation:gradient 3s linear infinite,zoom .9s ease;
+}
+
+.introLine{
+width:0;
+height:3px;
+margin:22px auto;
+border-radius:20px;
+background:linear-gradient(90deg,#00eaff,#ff2da6);
+box-shadow:0 0 20px #00eaff;
+animation:line 1.4s ease forwards;
+}
+
+.introBottom{
+font-size:9px;
+letter-spacing:4px;
+color:#666;
+}
+
+@keyframes gradient{
+to{background-position:300%}
+}
+
+@keyframes zoom{
+from{
+opacity:0;
+transform:scale(.65)
+}
+to{
+opacity:1;
+transform:scale(1)
+}
+}
+
+@keyframes line{
+to{width:260px}
+}
+
+@keyframes introHide{
+to{
+opacity:0;
+visibility:hidden
+}
+}
+
+/* ===== HEADER ===== */
+
+header{
+position:sticky;
+top:0;
+z-index:500;
+background:rgba(5,5,11,.65);
+backdrop-filter:blur(25px);
+border-bottom:1px solid rgba(255,255,255,.08);
+box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.header{
+height:68px;
+max-width:1150px;
+margin:auto;
+padding:0 18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:19px;
+font-weight:1000;
+background:linear-gradient(90deg,#00eaff,#8b5cf6,#ff2da6);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.online{
+font-size:9px;
+color:#4dff9b;
+padding:8px 12px;
+border:1px solid rgba(77,255,155,.2);
+border-radius:30px;
+background:rgba(77,255,155,.05);
+}
+
+/* ===== CONTAINER ===== */
+
+.container{
+max-width:1150px;
+margin:auto;
+padding:0 17px;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+text-align:center;
+padding:80px 0 45px;
+}
+
+.badge{
+display:inline-block;
+padding:9px 16px;
+border:1px solid rgba(255,255,255,.1);
+background:rgba(255,255,255,.045);
+border-radius:30px;
+font-size:10px;
+letter-spacing:1px;
+color:#aaa;
+box-shadow:0 0 30px rgba(124,58,237,.12);
+}
+
+.hero h1{
+font-size:clamp(50px,11vw,100px);
+line-height:.9;
+letter-spacing:-6px;
+font-weight:1000;
+margin-top:25px;
+}
+
+.gradient{
+background:linear-gradient(
+90deg,
+#00eaff,
+#7c3aed,
+#ff2da6
+);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.heroText{
+max-width:620px;
+margin:25px auto;
+font-size:14px;
+line-height:1.8;
+color:#858592;
+}
+
+.instagram{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:13px 21px;
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-size:12px;
+font-weight:bold;
+background:linear-gradient(
+45deg,
+#f58529,
+#dd2a7b,
+#8134af
+);
+box-shadow:0 10px 40px rgba(221,42,123,.18);
+transition:.3s;
+}
+
+.instagram:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 50px rgba(221,42,123,.35);
+}
+
+/* ===== SEARCH ===== */
+
+.search{
+max-width:650px;
+margin:32px auto 0;
+position:relative;
+}
+
+.search input{
+width:100%;
+height:56px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.1);
+background:rgba(255,255,255,.055);
+backdrop-filter:blur(20px);
+color:white;
+padding:0 20px 0 50px;
+outline:none;
+font-size:13px;
+box-shadow:
+inset 0 0 25px rgba(255,255,255,.015),
+0 15px 50px rgba(0,0,0,.2);
+}
+
+.searchIcon{
+position:absolute;
+left:18px;
+top:18px;
+color:#777;
+}
+
+/* ===== CATEGORIES ===== */
+
+.categories{
+display:flex;
+gap:9px;
+overflow-x:auto;
+padding:5px 0 25px;
+scrollbar-width:none;
+}
+
+.categories::-webkit-scrollbar{
+display:none
+}
+
+.category{
+white-space:nowrap;
+padding:10px 16px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.04);
+color:#888;
+font-size:11px;
+cursor:pointer;
+transition:.25s;
+}
+
+.category.active,
+.category:hover{
+color:white;
+border-color:transparent;
+background:linear-gradient(90deg,#673de6,#df277f);
+box-shadow:0 8px 30px rgba(124,58,237,.25);
+}
+
+/* ===== SECTION ===== */
+
+.section{
+padding:18px 0 35px;
+}
+
+.sectionTitle{
+display:flex;
+align-items:end;
+justify-content:space-between;
+margin-bottom:18px;
+}
+
+.sectionTitle h2{
+font-size:24px;
+}
+
+.sectionTitle span{
+font-size:9px;
+color:#666;
+letter-spacing:2px;
+}
+
+/* ===== FEATURED ===== */
+
+.featured{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-bottom:30px;
+}
+
+.feature{
+position:relative;
+padding:21px;
+border-radius:24px;
+overflow:hidden;
+background:
+linear-gradient(
+135deg,
+rgba(124,58,237,.18),
+rgba(255,255,255,.035)
+);
+border:1px solid rgba(255,255,255,.09);
+box-shadow:
+0 20px 70px rgba(0,0,0,.25),
+inset 0 0 30px rgba(255,255,255,.015);
+transition:.35s;
+}
+
+.feature:before{
+content:"";
+position:absolute;
+width:150px;
+height:150px;
+border-radius:50%;
+background:#7c3aed;
+filter:blur(70px);
+opacity:.2;
+right:-60px;
+top:-60px;
+}
+
+.feature:hover{
+transform:translateY(-7px);
+border-color:rgba(255,255,255,.18);
+box-shadow:0 25px 80px rgba(124,58,237,.18);
+}
+
+.featureTop{
+display:flex;
+gap:13px;
+align-items:center;
+position:relative;
+z-index:1;
+}
+
+.featureIcon{
+width:58px;
+height:58px;
+border-radius:17px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:1000;
+font-size:23px;
+background:#111;
+box-shadow:0 12px 35px rgba(0,0,0,.4);
+}
+
+.feature h3{
+font-size:15px;
+}
+
+.feature p{
+font-size:10px;
+color:#777;
+margin-top:5px;
+}
+
+.rating{
+margin-top:17px;
+color:#ffd43b;
+font-size:10px;
+}
+
+.open{
+margin-top:14px;
+display:block;
+text-align:center;
+padding:10px;
+border-radius:12px;
+background:rgba(255,255,255,.07);
+color:white;
+text-decoration:none;
+font-size:10px;
+font-weight:bold;
+position:relative;
+z-index:1;
+}
+
+/* ===== APP GRID ===== */
+
+.apps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+
+.card{
+position:relative;
+overflow:hidden;
+padding:20px;
+border-radius:25px;
+background:rgba(255,255,255,.045);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(25px);
+box-shadow:
+0 15px 60px rgba(0,0,0,.25),
+inset 0 0 35px rgba(255,255,255,.012);
+transition:.35s;
+}
+
+.card:before{
+content:"";
+position:absolute;
+width:120px;
+height:120px;
+background:#8b5cf6;
+filter:blur(65px);
+opacity:.13;
+right:-45px;
+top:-45px;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:rgba(255,255,255,.18);
+box-shadow:
+0 25px 80px rgba(0,0,0,.4),
+0 0 35px rgba(124,58,237,.08);
+}
+
+.appIcon{
+width:67px;
+height:67px;
+border-radius:19px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+font-weight:1000;
+box-shadow:0 15px 35px rgba(0,0,0,.4);
+margin-bottom:16px;
+}
+
+.capcut{
+background:#000;
+}
+
+.lr{
+background:linear-gradient(135deg,#0875dc,#071b55);
+}
+
+.picsart{
+background:linear-gradient(135deg,#ff2874,#7436ff);
+}
+
+.truecaller{
+background:linear-gradient(135deg,#20c8ed,#1267d8);
+}
+
+.vn{
+background:linear-gradient(135deg,#ff4b2b,#ff8a00);
+}
+
+.snapseed{
+background:linear-gradient(135deg,#222,#777);
+}
+
+.movie{
+background:linear-gradient(135deg,#7c3aed,#ec4899);
+}
+
+.ai{
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+}
+
+.card h3{
+font-size:16px;
+}
+
+.card small{
+display:block;
+font-size:10px;
+color:#777;
+margin-top:5px;
+}
+
+.stars{
+display:block;
+font-size:9px;
+color:#ffd43b;
+margin-top:8px;
+}
+
+.desc{
+font-size:11px;
+color:#858591;
+line-height:1.65;
+margin:16px 0;
+min-height:54px;
+}
+
+.telegram{
+display:block;
+width:100%;
+padding:12px;
+text-align:center;
+text-decoration:none;
+color:white;
+font-size:10px;
+font-weight:bold;
+border-radius:12px;
+background:linear-gradient(90deg,#0088cc,#00bfff);
+box-shadow:0 8px 25px rgba(0,136,204,.18);
+transition:.25s;
+}
+
+.telegram:hover{
+transform:translateY(-2px);
+box-shadow:0 12px 35px rgba(0,136,204,.35);
+}
+
+.noResult{
+display:none;
+text-align:center;
+padding:50px;
+color:#666;
+}
+
+/* ===== PREMIUM INFO ===== */
+
+.premium{
+margin:20px 0 35px;
+padding:28px;
+border-radius:27px;
+border:1px solid rgba(255,255,255,.08);
+background:
+linear-gradient(
+135deg,
+rgba(0,234,255,.07),
+rgba(124,58,237,.12),
+rgba(255,45,166,.07)
+);
+box-shadow:
+0 20px 70px rgba(0,0,0,.25),
+inset 0 0 50px rgba(255,255,255,.015);
+text-align:center;
+}
+
+.premiumIcon{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.premium h2{
+font-size:22px;
+}
+
+.premium p{
+max-width:600px;
+margin:12px auto 0;
+font-size:11px;
+line-height:1.8;
+color:#858591;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+border-top:1px solid rgba(255,255,255,.07);
+text-align:center;
+padding:32px 15px;
+color:#555;
+font-size:10px;
+}
+
+footer strong{
+background:linear-gradient(90deg,#00eaff,#ff2da6);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+/* ===== BOTTOM NAV ===== */
+
+.bottom{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:72px;
+z-index:1000;
+display:flex;
+justify-content:center;
+background:rgba(5,5,11,.82);
+backdrop-filter:blur(25px);
+border-top:1px solid rgba(255,255,255,.08);
+box-shadow:0 -15px 50px rgba(0,0,0,.3);
+}
+
+.bottomInner{
+width:100%;
+max-width:550px;
+display:flex;
+align-items:center;
+justify-content:space-around;
+}
+
+.nav{
+border:0;
+background:none;
+color:#666;
+font-size:9px;
+cursor:pointer;
+padding:8px 15px;
+}
+
+.nav span{
+display:block;
+font-size:20px;
+margin-bottom:4px;
+}
+
+.nav:hover{
+color:white;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:900px){
+
+.apps{
+grid-template-columns:repeat(2,1fr)
+}
+
+.featured{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.container{
+padding:0 14px
+}
+
+.hero{
+padding-top:65px;
+}
+
+.hero h1{
+letter-spacing:-4px;
+}
+
+.apps{
+grid-template-columns:1fr;
+}
+
+.card{
+padding:21px;
+}
+
+.logo{
+font-size:16px;
+}
+
+.online{
+display:none;
+}
+
+.premium{
+padding:24px 18px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="light"></div>
+
+<!-- ===== INTRO ===== -->
+
+<div class="intro">
+<div class="introBox">
+
+<div class="introSmall">
+✦ WELCOME TO ✦
+</div>
+
+<div class="introName">
+👑 SAUD WEB
+</div>
+
+<div class="introLine"></div>
+
+<div class="introBottom">
+PREMIUM APP EXPERIENCE
+</div>
+
+</div>
+</div>
+
+<!-- ===== HEADER ===== -->
+
+<header>
+<div class="header">
+
+<div class="logo">
+👑 SAUD WEB
+</div>
+
+<div class="online">
+● ONLINE
+</div>
+
+</div>
+</header>
+
+<!-- ===== MAIN ===== -->
+
+<main>
+
+<div class="container">
+
+<section class="hero">
+
+<div class="badge">
+✦ PREMIUM APP COLLECTION ✦
+</div>
+
+<h1>
+SAUD<br>
+<span class="gradient">WEB</span>
+</h1>
+
+<p class="heroText">
+Discover a premium collection of apps in one stylish place.
+Fast access, clean design and a smooth mobile experience.
+</p>
+
+<a
+class="instagram"
+href="https://www.instagram.com/mr_s_a_u_d_007?igsh=MWdjZW05M2RhdHUzbg=="
+target="_blank">
+📸 @mr_s_a_u_d_007
+</a>
+
+<div class="search">
+
+<span class="searchIcon">🔍</span>
+
+<input
+id="search"
+oninput="searchApps()"
+placeholder="Search apps..."
+>
+
+</div>
+
+</section>
+
+<!-- ===== CATEGORIES ===== -->
+
+<div class="categories">
+
+<button
+class="category active"
+onclick="filterApps('all',this)">
+All Apps
+</button>
+
+<button
+class="category"
+onclick="filterApps('photo',this)">
+📸 Photo
+</button>
+
+<button
+class="category"
+onclick="filterApps('video',this)">
+🎬 Video
+</button>
+
+<button
+class="category"
+onclick="filterApps('communication',this)">
+☎ Communication
+</button>
+
+<button
+class="category"
+onclick="filterApps('entertainment',this)">
+🎬 Entertainment
+</button>
+
+</div>
+
+<!-- ===== FEATURED ===== -->
+
+<section class="section">
+
+<div class="sectionTitle">
+<h2>🔥 Featured</h2>
+<span>TOP PICKS</span>
+</div>
+
+<div class="featured">
+
+<div class="feature">
+
+<div class="featureTop">
+
+<div class="featureIcon capcut">
+C
+</div>
+
+<div>
+<h3>CapCut</h3>
+<p>Professional Video Editor</p>
+</div>
+
+</div>
+
+<div class="rating">
+★★★★★ 4.5
+</div>
+
+<a
+class="open"
+href="https://t.me/saudchnnle"
+target="_blank">
+Open on Telegram →
+</a>
+
+</div>
+
+<div class="feature">
+
+<div class="featureTop">
+
+<div class="featureIcon lr">
+Lr
+</div>
+
+<div>
+<h3>Lightroom</h3>
+<p>Professional Photo Editor</p>
+</div>
+
+</div>
+
+<div class="rating">
+★★★★★ 4.7
+</div>
+
+<a
+class="open"
+href="https://t.me/saudchnnle"
+target="_blank">
+Open on Telegram →
+</a>
+
+</div>
+
+<div class="feature">
+
+<div class="featureTop">
+
+<div class="featureIcon movie">
+▶
+</div>
+
+<div>
+<h3>Movie Hub</h3>
+<p>Entertainment Collection</p>
+</div>
+
+</div>
+
+<div class="rating">
+★★★★★ 4.8
+</div>
+
+<a
+class="open"
+href="https://t.me/saudchnnle"
+target="_blank">
+Open on Telegram →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== ALL APPS ===== -->
+
+<section class="section">
+
+<div class="sectionTitle">
+<h2>📱 Apps</h2>
+<span>PREMIUM COLLECTION</span>
+</div>
+
+<div class="apps" id="apps">
+
+<!-- LIGHTROOM -->
+
+<div
+class="card"
+data-category="photo"
+data-name="lightroom adobe photo editor">
+
+<div class="appIcon lr">
+Lr
+</div>
+
+<h3>Adobe Lightroom</h3>
+<small>Professional Photo Editor</small>
+
+<span class="stars">
+★★★★★ 4.7
+</span>
+
+<p class="desc">
+Professional photo editing with powerful
+light, colour and creative controls.
+</p>
+
+<a
+class="telegram"
+href="https://t.me/saudchnnle"
+target="_blank">
+✈ Open on Telegram
+</a>
+
+</div>
+
+<!-- PICSART -->
+
+<div
+class="card"
+data-category="photo ai"
+data-name="picsart photo ai editor">
+
+<div class="appIcon picsart">
+P
+</div>
+
+<h3>Picsart</h3>
+<small>Photo & AI Editor</small>
+
+<span class="stars">
+★★★★★ 4.6
+</span>
+
+<p class="desc">
+Creative photo editing, effects, filters
+and powerful AI editing tools.
+</p>
+
+<a
+class="telegram"
+href="https://t.me/saudchnnle"
+target="_blank">
+✈ Open on Telegram
+</a>
+
+</div>
+
+<!-- TRUECALLER -->
+
+<div
+class="card"
+data-category="communication"
+data-name="truecaller caller id">
+
+<div class="appIcon truecaller">
+☎
+</div>
+
+<h3>Truecaller</h3>
+<small>Caller ID & Protection</small>
+
+<span class="stars">
+★★★★★ 4.5
+</span>
+
+<p class="desc">
+Caller identification and spam protection
+features in one useful app.
+</p>
+
+<a
+class="telegram"
+href="https://t.me/saudchnnle"
+target="_blank">
+✈ Open on Telegram
+</a>
+
+</div>
+
+<!-- CAPCUT -->
+
+<div
+class="card"
+data-category="video"
+data-name="capcut video editor">
+
+<div class="appIcon capcut">
+C
+</div>
+
+<h3>CapCut</h3>
+<small>Video Editor</small>
+
+<span class="stars">
+★★★★★ 4.5
+</span>
+
+<p class="desc">
+Create stylish videos with effects,
+transitions, filters and creative tools.
+</p>
+
+<a
+class="telegram"
+href="https://t.me/saudchnnle"
+target="_blank">
+✈ Open on Telegram
+</a>
+
+</div>
+
+<!-- VN -->
+
+<div
+class="card"
+data-category="video"
+data-name="vn video editor">
+
+<div class="appIcon vn">
+VN
+</div>
+
+<h3>VN Video Editor</h3>
+<small>Professional Video Editor</small>
+
+<span class="stars">
+★★★★★ 4.6
+</span>
+
+<p class="desc">
+Clean timeline editing, transitions,
+effects and creative video controls.
+</p>
+
+<a
+class="telegram"
+href="https://t.me/saudchnnle"
+target="_blank">
+✈ Open on Telegram
+</a>
+
+</div>
+
+<!-- SNAPSEED -->
+
+<div
+class="card"
+data-category="photo"
+data-name="snapseed photo editor">
+
+<div class="appIcon snapseed">
+S
+</div>
+
+<h3>Snapseed</h3>
+<small>Photo Editor</small>
+
+<span class="stars">
+★★★★★ 4.5
+</span>
+
+<p class="desc">
+Powerful photo editing tools with
+professional filters and adjustments.
+</p>
+
+<a
+class="telegram"
+href="https://t.me/saudchnnle"
+target="_blank">
+✈ Open on Telegram
+</a>
+
+</div>
+
+<!-- MOVIE HUB -->
+
+<div
+class="card"
+data-category="entertainment"
+data-name="movie hub entertainment">
+
+<div class="appIcon movie">
+▶
+</div>
+
+<h3>Movie Hub</h3>
+<small>Entertainment</small>
+
+<span class="stars">
+★★★★★ 4.8
+</span>
+
+<p class="desc">
+Explore the entertainment collection
+available through the official channel.
+</p>
+
+<a
+class="telegram"
+href="https://t.me/saudchnnle"
+target="_blank">
+✈ Open on Telegram
+</a>
+
+</div>
+
+<!-- EXTRA APP 1 -->
+
+<div
+class="card"
+data-category="ai"
+data-name="ai tools assistant">
+
+<div class="appIcon ai">
+AI
+</div>
+
+<h3>AI Tools</h3>
+<small>AI Collection</small>
+
+<span class="stars">
+★★★★★ 4.8
+</span>
+
+<p class="desc">
+Explore useful AI tools and creative
+resources available in the collection.
+</p>
+
+<a
+class="telegram"
+href="https://t.me/saudchnnle"
+target="_blank">
+✈ Open on Telegram
+</a>
+
+</div>
+
+</div>
+
+<div
+class="noResult"
+id="noResult">
+😕 No app found
+</div>
+
+</section>
+
+<!-- ===== PREMIUM BOX ===== -->
+
+<div class="premium">
+
+<div class="premiumIcon">
+👑
+</div>
+
+<h2>
+Welcome to Saud Web
+</h2>
+
+<p>
+A premium collection made with a modern
+dark interface, smooth animations and
+easy one-tap access to the Telegram channel.
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+<p>
+© 2026 <strong>Saud Web</strong>
+</p>
+
+<p style="margin-top:8px">
+Premium App Experience • Made by Saud
+</p>
+
+</footer>
+
+<!-- ===== BOTTOM NAV ===== -->
+
+<div class="bottom">
+
+<div class="bottomInner">
+
+<button
+class="nav"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+<span>⌂</span>
+Home
+</button>
+
+<button
+class="nav"
+onclick="document.getElementById('apps').scrollIntoView({behavior:'smooth'})">
+<span>▦</span>
+Apps
+</button>
+
+<button
+class="nav"
+onclick="window.open('https://t.me/saudchnnle','_blank')">
+<span>✈</span>
+Telegram
+</button>
+
+<button
+class="nav"
+onclick="window.open('https://www.instagram.com/mr_s_a_u_d_007?igsh=MWdjZW05M2RhdHUzbg==','_blank')">
+<span>◎</span>
+Instagram
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* ===== SEARCH ===== */
+
+function searchApps(){
+
+let input=document
+.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+let cards=document.querySelectorAll(".card");
+
+let found=0;
+
+cards.forEach(card=>{
+
+let name=card
+.getAttribute("data-name")
+.toLowerCase();
+
+if(name.includes(input)){
+
+card.style.display="block";
+found++;
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+document.getElementById("noResult").style.display=
+found===0 ? "block" : "none";
+
+}
+
+/* ===== CATEGORY FILTER ===== */
+
+function filterApps(category,button){
+
+document
+.querySelectorAll(".category")
+.forEach(x=>x.classList.remove("active"));
+
+button.classList.add("active");
+
+let cards=document.querySelectorAll(".card");
+
+let found=0;
+
+cards.forEach(card=>{
+
+let categories=card
+.getAttribute("data-category")
+.toLowerCase();
+
+if(
+category==="all" ||
+categories.includes(category)
+){
+
+card.style.display="block";
+found++;
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+document.getElementById("noResult").style.display=
+found===0 ? "block" : "none";
+
+document.getElementById("search").value="";
+
+}
+
+/* ===== INTRO CLEANUP ===== */
+
+setTimeout(function(){
+
+let intro=document.querySelector(".intro");
+
+if(intro){
+intro.remove();
+}
+
+},4500);
+
+</script>
+
+</body>
+</html>
