@@ -3,1435 +3,1122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#070711">
-<title>👑 Saud Web</title>
+<meta name="theme-color" content="#050816">
+<title>👑 SAUD WEB</title>
 
 <style>
 *{
-box-sizing:border-box;
-margin:0;
-padding:0
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth
+  scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#05050b;
-color:#fff;
-min-height:100vh;
-overflow-x:hidden;
-padding-bottom:85px;
+  background:#050816;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
 }
-
-/* ===== PREMIUM BACKGROUND ===== */
 
 body:before{
-content:"";
-position:fixed;
-width:520px;
-height:520px;
-border-radius:50%;
-background:#7c3aed;
-filter:blur(150px);
-opacity:.25;
-top:-220px;
-left:-220px;
-z-index:-5;
-animation:float1 10s infinite alternate ease-in-out;
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(0,234,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,234,255,.035) 1px,transparent 1px);
+  background-size:35px 35px;
+  pointer-events:none;
+  z-index:-1;
 }
 
-body:after{
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-border-radius:50%;
-background:#00d9ff;
-filter:blur(150px);
-opacity:.17;
-right:-220px;
-bottom:-220px;
-z-index:-5;
-animation:float2 12s infinite alternate ease-in-out;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
-@keyframes float1{
-to{transform:translate(230px,180px)}
+button{
+  font-family:inherit;
 }
-
-@keyframes float2{
-to{transform:translate(-220px,-170px)}
-}
-
-/* EXTRA LIGHT */
-
-.light{
-position:fixed;
-width:250px;
-height:250px;
-border-radius:50%;
-filter:blur(100px);
-opacity:.12;
-background:#ff1493;
-top:40%;
-left:40%;
-z-index:-4;
-animation:lightMove 15s infinite alternate;
-}
-
-@keyframes lightMove{
-to{
-transform:translate(180px,-120px) scale(1.3)
-}
-}
-
-/* ===== INTRO ===== */
 
 .intro{
-position:fixed;
-inset:0;
-z-index:9999;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#020207;
-animation:introHide 1s ease 3.3s forwards;
+  position:fixed;
+  inset:0;
+  background:#03050d;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  animation:introHide 1s ease 2.5s forwards;
 }
 
-.introBox{
-text-align:center;
-padding:20px;
+.intro h1{
+  font-size:42px;
+  letter-spacing:4px;
+  color:#00eaff;
+  text-shadow:0 0 25px #00eaff;
+  animation:introText 2s ease;
 }
 
-.introSmall{
-font-size:10px;
-letter-spacing:7px;
-color:#777;
-margin-bottom:22px;
-}
-
-.introName{
-font-size:clamp(45px,14vw,100px);
-font-weight:1000;
-letter-spacing:-6px;
-background:linear-gradient(
-90deg,
-#00eaff,
-#8b5cf6,
-#ff2da6,
-#00eaff
-);
-background-size:300%;
--webkit-background-clip:text;
-color:transparent;
-animation:gradient 3s linear infinite,zoom .9s ease;
-}
-
-.introLine{
-width:0;
-height:3px;
-margin:22px auto;
-border-radius:20px;
-background:linear-gradient(90deg,#00eaff,#ff2da6);
-box-shadow:0 0 20px #00eaff;
-animation:line 1.4s ease forwards;
-}
-
-.introBottom{
-font-size:9px;
-letter-spacing:4px;
-color:#666;
-}
-
-@keyframes gradient{
-to{background-position:300%}
-}
-
-@keyframes zoom{
-from{
-opacity:0;
-transform:scale(.65)
-}
-to{
-opacity:1;
-transform:scale(1)
-}
-}
-
-@keyframes line{
-to{width:260px}
+@keyframes introText{
+  0%{opacity:0;transform:scale(.6)}
+  60%{opacity:1;transform:scale(1.08)}
+  100%{transform:scale(1)}
 }
 
 @keyframes introHide{
-to{
-opacity:0;
-visibility:hidden
-}
-}
-
-/* ===== HEADER ===== */
-
-header{
-position:sticky;
-top:0;
-z-index:500;
-background:rgba(5,5,11,.65);
-backdrop-filter:blur(25px);
-border-bottom:1px solid rgba(255,255,255,.08);
-box-shadow:0 10px 40px rgba(0,0,0,.25);
+  to{
+    opacity:0;
+    visibility:hidden;
+  }
 }
 
 .header{
-height:68px;
-max-width:1150px;
-margin:auto;
-padding:0 18px;
-display:flex;
-align-items:center;
-justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 20px;
+  background:rgba(5,8,22,.85);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(0,234,255,.12);
 }
 
 .logo{
-font-size:19px;
-font-weight:1000;
-background:linear-gradient(90deg,#00eaff,#8b5cf6,#ff2da6);
--webkit-background-clip:text;
-color:transparent;
+  font-size:22px;
+  font-weight:800;
+  color:#00eaff;
+  text-shadow:0 0 12px rgba(0,234,255,.5);
 }
 
-.online{
-font-size:9px;
-color:#4dff9b;
-padding:8px 12px;
-border:1px solid rgba(77,255,155,.2);
-border-radius:30px;
-background:rgba(77,255,155,.05);
+.status{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:#8fa1bd;
+  font-size:12px;
 }
 
-/* ===== CONTAINER ===== */
+.status i{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#00ff88;
+  box-shadow:0 0 10px #00ff88;
+}
 
 .container{
-max-width:1150px;
-margin:auto;
-padding:0 17px;
+  width:min(1100px,92%);
+  margin:auto;
 }
-
-/* ===== HERO ===== */
 
 .hero{
-text-align:center;
-padding:80px 0 45px;
-}
-
-.badge{
-display:inline-block;
-padding:9px 16px;
-border:1px solid rgba(255,255,255,.1);
-background:rgba(255,255,255,.045);
-border-radius:30px;
-font-size:10px;
-letter-spacing:1px;
-color:#aaa;
-box-shadow:0 0 30px rgba(124,58,237,.12);
+  margin-top:25px;
+  padding:35px 25px;
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(0,234,255,.15),transparent 35%),
+    linear-gradient(135deg,#101a38,#070b19);
+  border:1px solid rgba(0,234,255,.15);
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
 }
 
 .hero h1{
-font-size:clamp(50px,11vw,100px);
-line-height:.9;
-letter-spacing:-6px;
-font-weight:1000;
-margin-top:25px;
+  font-size:clamp(32px,7vw,58px);
+  line-height:1.05;
+  margin-bottom:14px;
 }
 
-.gradient{
-background:linear-gradient(
-90deg,
-#00eaff,
-#7c3aed,
-#ff2da6
-);
--webkit-background-clip:text;
-color:transparent;
+.hero h1 span{
+  color:#00eaff;
+  text-shadow:0 0 20px rgba(0,234,255,.4);
 }
 
-.heroText{
-max-width:620px;
-margin:25px auto;
-font-size:14px;
-line-height:1.8;
-color:#858592;
+.hero p{
+  color:#9caac4;
+  line-height:1.7;
+  max-width:650px;
 }
 
-.instagram{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:13px 21px;
-border-radius:30px;
-color:white;
-text-decoration:none;
-font-size:12px;
-font-weight:bold;
-background:linear-gradient(
-45deg,
-#f58529,
-#dd2a7b,
-#8134af
-);
-box-shadow:0 10px 40px rgba(221,42,123,.18);
-transition:.3s;
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:24px;
 }
 
-.instagram:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 50px rgba(221,42,123,.35);
+.btn{
+  border:0;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.25s;
 }
 
-/* ===== SEARCH ===== */
-
-.search{
-max-width:650px;
-margin:32px auto 0;
-position:relative;
+.btn:hover{
+  transform:translateY(-2px);
 }
 
-.search input{
-width:100%;
-height:56px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.1);
-background:rgba(255,255,255,.055);
-backdrop-filter:blur(20px);
-color:white;
-padding:0 20px 0 50px;
-outline:none;
-font-size:13px;
-box-shadow:
-inset 0 0 25px rgba(255,255,255,.015),
-0 15px 50px rgba(0,0,0,.2);
+.btn-primary{
+  background:#00eaff;
+  color:#001015;
+  box-shadow:0 0 20px rgba(0,234,255,.2);
 }
 
-.searchIcon{
-position:absolute;
-left:18px;
-top:18px;
-color:#777;
+.btn-dark{
+  background:#111a2d;
+  color:#fff;
+  border:1px solid #263958;
 }
 
-/* ===== CATEGORIES ===== */
+.search-box{
+  margin:22px 0;
+  position:relative;
+}
+
+.search-box input{
+  width:100%;
+  padding:16px 48px 16px 18px;
+  border-radius:15px;
+  border:1px solid #203451;
+  outline:none;
+  background:#0a1121;
+  color:#fff;
+  font-size:15px;
+}
+
+.search-box input:focus{
+  border-color:#00eaff;
+  box-shadow:0 0 18px rgba(0,234,255,.08);
+}
+
+.clear-search{
+  position:absolute;
+  right:15px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#8090aa;
+  cursor:pointer;
+  display:none;
+}
 
 .categories{
-display:flex;
-gap:9px;
-overflow-x:auto;
-padding:5px 0 25px;
-scrollbar-width:none;
+  display:flex;
+  gap:9px;
+  overflow-x:auto;
+  padding:4px 0 12px;
+  scrollbar-width:none;
 }
 
 .categories::-webkit-scrollbar{
-display:none
+  display:none;
 }
 
-.category{
-white-space:nowrap;
-padding:10px 16px;
-border-radius:30px;
-border:1px solid rgba(255,255,255,.08);
-background:rgba(255,255,255,.04);
-color:#888;
-font-size:11px;
-cursor:pointer;
-transition:.25s;
+.cat{
+  white-space:nowrap;
+  padding:9px 14px;
+  border-radius:20px;
+  border:1px solid #203451;
+  background:#0a1121;
+  color:#9caac4;
+  cursor:pointer;
 }
 
-.category.active,
-.category:hover{
-color:white;
-border-color:transparent;
-background:linear-gradient(90deg,#673de6,#df277f);
-box-shadow:0 8px 30px rgba(124,58,237,.25);
+.cat.active,
+.cat:hover{
+  background:#00eaff;
+  color:#001015;
+  border-color:#00eaff;
 }
 
-/* ===== SECTION ===== */
-
-.section{
-padding:18px 0 35px;
+.section-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:25px 0 14px;
 }
 
-.sectionTitle{
-display:flex;
-align-items:end;
-justify-content:space-between;
-margin-bottom:18px;
+.section-title h2{
+  font-size:21px;
 }
 
-.sectionTitle h2{
-font-size:24px;
+.count{
+  font-size:12px;
+  color:#71819c;
+}.featured{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
 }
 
-.sectionTitle span{
-font-size:9px;
-color:#666;
-letter-spacing:2px;
+.feature-card{
+  padding:20px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#101b35,#080d1b);
+  border:1px solid #203451;
+  transition:.3s;
 }
 
-/* ===== FEATURED ===== */
-
-.featured{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-margin-bottom:30px;
+.feature-card:hover{
+  transform:translateY(-5px);
+  border-color:#00eaff;
+  box-shadow:0 15px 35px rgba(0,234,255,.08);
 }
 
-.feature{
-position:relative;
-padding:21px;
-border-radius:24px;
-overflow:hidden;
-background:
-linear-gradient(
-135deg,
-rgba(124,58,237,.18),
-rgba(255,255,255,.035)
-);
-border:1px solid rgba(255,255,255,.09);
-box-shadow:
-0 20px 70px rgba(0,0,0,.25),
-inset 0 0 30px rgba(255,255,255,.015);
-transition:.35s;
+.feature-icon{
+  font-size:32px;
+  margin-bottom:12px;
 }
 
-.feature:before{
-content:"";
-position:absolute;
-width:150px;
-height:150px;
-border-radius:50%;
-background:#7c3aed;
-filter:blur(70px);
-opacity:.2;
-right:-60px;
-top:-60px;
+.feature-card h3{
+  margin-bottom:7px;
 }
 
-.feature:hover{
-transform:translateY(-7px);
-border-color:rgba(255,255,255,.18);
-box-shadow:0 25px 80px rgba(124,58,237,.18);
+.feature-card p{
+  color:#8493ad;
+  font-size:13px;
+  line-height:1.5;
 }
-
-.featureTop{
-display:flex;
-gap:13px;
-align-items:center;
-position:relative;
-z-index:1;
-}
-
-.featureIcon{
-width:58px;
-height:58px;
-border-radius:17px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:1000;
-font-size:23px;
-background:#111;
-box-shadow:0 12px 35px rgba(0,0,0,.4);
-}
-
-.feature h3{
-font-size:15px;
-}
-
-.feature p{
-font-size:10px;
-color:#777;
-margin-top:5px;
-}
-
-.rating{
-margin-top:17px;
-color:#ffd43b;
-font-size:10px;
-}
-
-.open{
-margin-top:14px;
-display:block;
-text-align:center;
-padding:10px;
-border-radius:12px;
-background:rgba(255,255,255,.07);
-color:white;
-text-decoration:none;
-font-size:10px;
-font-weight:bold;
-position:relative;
-z-index:1;
-}
-
-/* ===== APP GRID ===== */
 
 .apps{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
 }
 
 .card{
-position:relative;
-overflow:hidden;
-padding:20px;
-border-radius:25px;
-background:rgba(255,255,255,.045);
-border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(25px);
-box-shadow:
-0 15px 60px rgba(0,0,0,.25),
-inset 0 0 35px rgba(255,255,255,.012);
-transition:.35s;
+  position:relative;
+  padding:20px;
+  border-radius:20px;
+  background:#0a1121;
+  border:1px solid #1b2b45;
+  transition:.3s;
+  overflow:hidden;
 }
 
 .card:before{
-content:"";
-position:absolute;
-width:120px;
-height:120px;
-background:#8b5cf6;
-filter:blur(65px);
-opacity:.13;
-right:-45px;
-top:-45px;
+  content:"";
+  position:absolute;
+  width:100px;
+  height:100px;
+  right:-45px;
+  top:-45px;
+  background:#00eaff;
+  opacity:.06;
+  border-radius:50%;
 }
 
 .card:hover{
-transform:translateY(-8px);
-border-color:rgba(255,255,255,.18);
-box-shadow:
-0 25px 80px rgba(0,0,0,.4),
-0 0 35px rgba(124,58,237,.08);
+  transform:translateY(-5px);
+  border-color:#00eaff;
+  box-shadow:0 15px 35px rgba(0,0,0,.3);
 }
 
-.appIcon{
-width:67px;
-height:67px;
-border-radius:19px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:25px;
-font-weight:1000;
-box-shadow:0 15px 35px rgba(0,0,0,.4);
-margin-bottom:16px;
+.app-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
 }
 
-.capcut{
-background:#000;
+.app-icon{
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  background:#111d35;
+  font-size:25px;
 }
 
-.lr{
-background:linear-gradient(135deg,#0875dc,#071b55);
-}
-
-.picsart{
-background:linear-gradient(135deg,#ff2874,#7436ff);
-}
-
-.truecaller{
-background:linear-gradient(135deg,#20c8ed,#1267d8);
-}
-
-.vn{
-background:linear-gradient(135deg,#ff4b2b,#ff8a00);
-}
-
-.snapseed{
-background:linear-gradient(135deg,#222,#777);
-}
-
-.movie{
-background:linear-gradient(135deg,#7c3aed,#ec4899);
-}
-
-.ai{
-background:linear-gradient(135deg,#00c6ff,#0072ff);
+.badge{
+  padding:5px 8px;
+  border-radius:8px;
+  background:#14243a;
+  color:#00eaff;
+  font-size:9px;
+  font-weight:bold;
 }
 
 .card h3{
-font-size:16px;
+  margin-bottom:7px;
 }
 
-.card small{
-display:block;
-font-size:10px;
-color:#777;
-margin-top:5px;
+.card p{
+  color:#7f8da5;
+  font-size:13px;
+  line-height:1.5;
+  min-height:40px;
 }
 
-.stars{
-display:block;
-font-size:9px;
-color:#ffd43b;
-margin-top:8px;
+.card-actions{
+  display:flex;
+  gap:8px;
+  margin-top:16px;
 }
 
-.desc{
-font-size:11px;
-color:#858591;
-line-height:1.65;
-margin:16px 0;
-min-height:54px;
+.card-btn{
+  flex:1;
+  padding:10px;
+  border:0;
+  border-radius:10px;
+  cursor:pointer;
+  background:#111d32;
+  color:#fff;
+  border:1px solid #243652;
+  font-size:12px;
 }
 
-.telegram{
-display:block;
-width:100%;
-padding:12px;
-text-align:center;
-text-decoration:none;
-color:white;
-font-size:10px;
-font-weight:bold;
-border-radius:12px;
-background:linear-gradient(90deg,#0088cc,#00bfff);
-box-shadow:0 8px 25px rgba(0,136,204,.18);
-transition:.25s;
+.card-btn.primary{
+  background:#00eaff;
+  color:#001015;
+  border-color:#00eaff;
+  font-weight:bold;
 }
-
-.telegram:hover{
-transform:translateY(-2px);
-box-shadow:0 12px 35px rgba(0,136,204,.35);
-}
-
-.noResult{
-display:none;
-text-align:center;
-padding:50px;
-color:#666;
-}
-
-/* ===== PREMIUM INFO ===== */
 
 .premium{
-margin:20px 0 35px;
-padding:28px;
-border-radius:27px;
-border:1px solid rgba(255,255,255,.08);
-background:
-linear-gradient(
-135deg,
-rgba(0,234,255,.07),
-rgba(124,58,237,.12),
-rgba(255,45,166,.07)
-);
-box-shadow:
-0 20px 70px rgba(0,0,0,.25),
-inset 0 0 50px rgba(255,255,255,.015);
-text-align:center;
-}
-
-.premiumIcon{
-font-size:30px;
-margin-bottom:10px;
+  margin:30px 0;
+  padding:25px;
+  border-radius:22px;
+  background:
+    linear-gradient(135deg,
+    rgba(0,234,255,.12),
+    rgba(100,50,255,.08));
+  border:1px solid rgba(0,234,255,.2);
 }
 
 .premium h2{
-font-size:22px;
+  margin-bottom:8px;
 }
 
 .premium p{
-max-width:600px;
-margin:12px auto 0;
-font-size:11px;
-line-height:1.8;
-color:#858591;
+  color:#91a0ba;
+  line-height:1.6;
+  font-size:14px;
 }
 
-/* ===== FOOTER ===== */
-
-footer{
-border-top:1px solid rgba(255,255,255,.07);
-text-align:center;
-padding:32px 15px;
-color:#555;
-font-size:10px;
+.premium-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:10px;
+  margin-top:18px;
 }
 
-footer strong{
-background:linear-gradient(90deg,#00eaff,#ff2da6);
--webkit-background-clip:text;
-color:transparent;
+.premium-item{
+  padding:12px;
+  border-radius:12px;
+  background:rgba(0,0,0,.2);
+  color:#c4d0e4;
+  font-size:13px;
 }
 
-/* ===== BOTTOM NAV ===== */
+.empty{
+  display:none;
+  text-align:center;
+  padding:40px 20px;
+  color:#71819c;
+}
+
+.footer{
+  text-align:center;
+  padding:30px 15px 90px;
+  color:#65748d;
+  font-size:12px;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(8px);
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(450px,100%);
+  padding:25px;
+  border-radius:22px;
+  background:#0a1121;
+  border:1px solid #203451;
+  box-shadow:0 25px 80px rgba(0,0,0,.5);
+}
+
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.close{
+  width:35px;
+  height:35px;
+  border:0;
+  border-radius:10px;
+  background:#152238;
+  color:#fff;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.modal-box p{
+  color:#8b9ab3;
+  line-height:1.7;
+  font-size:14px;
+}
 
 .bottom{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-height:72px;
-z-index:1000;
-display:flex;
-justify-content:center;
-background:rgba(5,5,11,.82);
-backdrop-filter:blur(25px);
-border-top:1px solid rgba(255,255,255,.08);
-box-shadow:0 -15px 50px rgba(0,0,0,.3);
+  position:fixed;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(500px,92%);
+  padding:10px;
+  border-radius:18px;
+  display:flex;
+  justify-content:space-around;
+  background:rgba(8,14,29,.9);
+  backdrop-filter:blur(15px);
+  border:1px solid #203451;
+  z-index:200;
 }
 
-.bottomInner{
-width:100%;
-max-width:550px;
-display:flex;
-align-items:center;
-justify-content:space-around;
+.bottom a{
+  color:#8796ae;
+  font-size:12px;
+  text-align:center;
 }
 
-.nav{
-border:0;
-background:none;
-color:#666;
-font-size:9px;
-cursor:pointer;
-padding:8px 15px;
+.bottom a span{
+  display:block;
+  font-size:20px;
+  margin-bottom:3px;
 }
 
-.nav span{
-display:block;
-font-size:20px;
-margin-bottom:4px;
-}
-
-.nav:hover{
-color:white;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media(max-width:900px){
-
-.apps{
-grid-template-columns:repeat(2,1fr)
-}
-
-.featured{
-grid-template-columns:1fr;
-}
-
+.bottom a:hover{
+  color:#00eaff;
 }
 
 @media(max-width:600px){
+  .header{
+    padding:14px 15px;
+  }
 
-.container{
-padding:0 14px
-}
+  .hero{
+    padding:28px 18px;
+  }
 
-.hero{
-padding-top:65px;
-}
+  .hero h1{
+    font-size:34px;
+  }
 
-.hero h1{
-letter-spacing:-4px;
-}
+  .featured,
+  .apps{
+    grid-template-columns:1fr;
+  }
 
-.apps{
-grid-template-columns:1fr;
-}
-
-.card{
-padding:21px;
-}
-
-.logo{
-font-size:16px;
-}
-
-.online{
-display:none;
-}
-
-.premium{
-padding:24px 18px;
-}
-
-}
-</style>
+  .bottom{
+    bottom:8px;
+  }
+}</style>
 </head>
 
 <body>
 
-<div class="light"></div>
-
-<!-- ===== INTRO ===== -->
-
 <div class="intro">
-<div class="introBox">
-
-<div class="introSmall">
-✦ WELCOME TO ✦
+  <h1>👑 SAUD WEB</h1>
 </div>
 
-<div class="introName">
-👑 SAUD WEB
-</div>
+<header class="header">
+  <div class="logo">👑 SAUD WEB</div>
 
-<div class="introLine"></div>
-
-<div class="introBottom">
-PREMIUM APP EXPERIENCE
-</div>
-
-</div>
-</div>
-
-<!-- ===== HEADER ===== -->
-
-<header>
-<div class="header">
-
-<div class="logo">
-👑 SAUD WEB
-</div>
-
-<div class="online">
-● ONLINE
-</div>
-
-</div>
+  <div class="status">
+    <i></i>
+    ONLINE
+  </div>
 </header>
 
-<!-- ===== MAIN ===== -->
-
-<main>
-
-<div class="container">
+<main class="container">
 
 <section class="hero">
+  <h1>Welcome to <span>Saud Web</span></h1>
 
-<div class="badge">
-✦ PREMIUM APP COLLECTION ✦
-</div>
+  <p>
+    Your premium digital hub for apps, AI tools,
+    editing resources and useful technology.
+  </p>
 
-<h1>
-SAUD<br>
-<span class="gradient">WEB</span>
-</h1>
+  <div class="hero-buttons">
+    <a class="btn btn-primary"
+       href="https://t.me/saudchnnle"
+       target="_blank">
+      🚀 Join Telegram
+    </a>
 
-<p class="heroText">
-Discover a premium collection of apps in one stylish place.
-Fast access, clean design and a smooth mobile experience.
-</p>
-
-<a
-class="instagram"
-href="https://www.instagram.com/mr_s_a_u_d_007?igsh=MWdjZW05M2RhdHUzbg=="
-target="_blank">
-📸 @mr_s_a_u_d_007
-</a>
-
-<div class="search">
-
-<span class="searchIcon">🔍</span>
-
-<input
-id="search"
-oninput="searchApps()"
-placeholder="Search apps..."
->
-
-</div>
-
+    <a class="btn btn-dark"
+       href="https://www.instagram.com/mr_s_a_u_d_007?igsh=MWdjZW05M2RhdHUzbg=="
+       target="_blank">
+      📸 Instagram
+    </a>
+  </div>
 </section>
 
-<!-- ===== CATEGORIES ===== -->
+
+<div class="search-box">
+  <input
+    type="text"
+    id="search"
+    placeholder="🔎 Search apps, tools..."
+    oninput="searchApps()">
+
+  <div class="clear-search"
+       id="clearSearch"
+       onclick="clearSearch()">✕</div>
+</div>
+
 
 <div class="categories">
+  <button class="cat active"
+          onclick="filterApps('all',this)">
+    All
+  </button>
 
-<button
-class="category active"
-onclick="filterApps('all',this)">
-All Apps
-</button>
+  <button class="cat"
+          onclick="filterApps('editing',this)">
+    🎨 Editing
+  </button>
 
-<button
-class="category"
-onclick="filterApps('photo',this)">
-📸 Photo
-</button>
+  <button class="cat"
+          onclick="filterApps('video',this)">
+    🎬 Video
+  </button>
 
-<button
-class="category"
-onclick="filterApps('video',this)">
-🎬 Video
-</button>
+  <button class="cat"
+          onclick="filterApps('utility',this)">
+    ⚡ Utility
+  </button>
 
-<button
-class="category"
-onclick="filterApps('communication',this)">
-☎ Communication
-</button>
-
-<button
-class="category"
-onclick="filterApps('entertainment',this)">
-🎬 Entertainment
-</button>
-
+  <button class="cat"
+          onclick="filterApps('ai',this)">
+    🤖 AI
+  </button>
 </div>
 
-<!-- ===== FEATURED ===== -->
 
-<section class="section">
-
-<div class="sectionTitle">
-<h2>🔥 Featured</h2>
-<span>TOP PICKS</span>
+<div class="section-title">
+  <h2>🔥 Featured</h2>
 </div>
 
-<div class="featured">
+<section class="featured">
 
-<div class="feature">
+  <div class="feature-card">
+    <div class="feature-icon">🤖</div>
+    <h3>AI Tools</h3>
+    <p>
+      Explore useful AI tools and smart digital resources.
+    </p>
+  </div>
 
-<div class="featureTop">
+  <div class="feature-card">
+    <div class="feature-icon">🎨</div>
+    <h3>Photo Editing</h3>
+    <p>
+      Powerful editing apps and creative tools.
+    </p>
+  </div>
 
-<div class="featureIcon capcut">
-C
-</div>
-
-<div>
-<h3>CapCut</h3>
-<p>Professional Video Editor</p>
-</div>
-
-</div>
-
-<div class="rating">
-★★★★★ 4.5
-</div>
-
-<a
-class="open"
-href="https://t.me/saudchnnle"
-target="_blank">
-Open on Telegram →
-</a>
-
-</div>
-
-<div class="feature">
-
-<div class="featureTop">
-
-<div class="featureIcon lr">
-Lr
-</div>
-
-<div>
-<h3>Lightroom</h3>
-<p>Professional Photo Editor</p>
-</div>
-
-</div>
-
-<div class="rating">
-★★★★★ 4.7
-</div>
-
-<a
-class="open"
-href="https://t.me/saudchnnle"
-target="_blank">
-Open on Telegram →
-</a>
-
-</div>
-
-<div class="feature">
-
-<div class="featureTop">
-
-<div class="featureIcon movie">
-▶
-</div>
-
-<div>
-<h3>Movie Hub</h3>
-<p>Entertainment Collection</p>
-</div>
-
-</div>
-
-<div class="rating">
-★★★★★ 4.8
-</div>
-
-<a
-class="open"
-href="https://t.me/saudchnnle"
-target="_blank">
-Open on Telegram →
-</a>
-
-</div>
-
-</div>
+  <div class="feature-card">
+    <div class="feature-icon">🚀</div>
+    <h3>Premium Hub</h3>
+    <p>
+      Discover useful apps and technology resources.
+    </p>
+  </div>
 
 </section>
 
-<!-- ===== ALL APPS ===== -->
 
-<section class="section">
-
-<div class="sectionTitle">
-<h2>📱 Apps</h2>
-<span>PREMIUM COLLECTION</span>
+<div class="section-title">
+  <h2>📱 Apps & Tools</h2>
+  <span class="count" id="count">8 Apps</span>
 </div>
 
-<div class="apps" id="apps">
 
-<!-- LIGHTROOM -->
+<section class="apps" id="apps">
 
-<div
-class="card"
-data-category="photo"
-data-name="lightroom adobe photo editor">
 
-<div class="appIcon lr">
-Lr
+<div class="card"
+     data-name="lightroom"
+     data-category="editing">
+
+  <div class="app-top">
+    <div class="app-icon">🌈</div>
+    <span class="badge">POPULAR</span>
+  </div>
+
+  <h3>Lightroom</h3>
+
+  <p>
+    Professional photo editing and color tools.
+  </p>
+
+  <div class="card-actions">
+    <button class="card-btn"
+            onclick="openModal('Lightroom','Professional photo editing and advanced color adjustment tool.')">
+      Info
+    </button>
+
+    <button class="card-btn primary">
+      Open
+    </button>
+  </div>
 </div>
 
-<h3>Adobe Lightroom</h3>
-<small>Professional Photo Editor</small>
 
-<span class="stars">
-★★★★★ 4.7
-</span>
+<div class="card"
+     data-name="picsart"
+     data-category="editing">
 
-<p class="desc">
-Professional photo editing with powerful
-light, colour and creative controls.
-</p>
+  <div class="app-top">
+    <div class="app-icon">🖼️</div>
+    <span class="badge">TRENDING</span>
+  </div>
 
-<a
-class="telegram"
-href="https://t.me/saudchnnle"
-target="_blank">
-✈ Open on Telegram
-</a>
+  <h3>Picsart</h3>
 
+  <p>
+    Creative photo editing, effects and design tools.
+  </p>
+
+  <div class="card-actions">
+    <button class="card-btn"
+            onclick="openModal('Picsart','Creative editing platform with effects, filters and design tools.')">
+      Info
+    </button>
+
+    <button class="card-btn primary">
+      Open
+    </button>
+  </div>
 </div>
 
-<!-- PICSART -->
 
-<div
-class="card"
-data-category="photo ai"
-data-name="picsart photo ai editor">
+<div class="card"
+     data-name="truecaller"
+     data-category="utility">
 
-<div class="appIcon picsart">
-P
+  <div class="app-top">
+    <div class="app-icon">📞</div>
+    <span class="badge">USEFUL</span>
+  </div>
+
+  <h3>Truecaller</h3>
+
+  <p>
+    Caller identification and spam protection tools.
+  </p>
+
+  <div class="card-actions">
+    <button class="card-btn"
+            onclick="openModal('Truecaller','Caller identification and spam protection application.')">
+      Info
+    </button>
+
+    <button class="card-btn primary">
+      Open
+    </button>
+  </div>
 </div>
 
-<h3>Picsart</h3>
-<small>Photo & AI Editor</small>
 
-<span class="stars">
-★★★★★ 4.6
-</span>
+<div class="card"
+     data-name="capcut"
+     data-category="video">
 
-<p class="desc">
-Creative photo editing, effects, filters
-and powerful AI editing tools.
-</p>
+  <div class="app-top">
+    <div class="app-icon">✂️</div>
+    <span class="badge">HOT</span>
+  </div>
 
-<a
-class="telegram"
-href="https://t.me/saudchnnle"
-target="_blank">
-✈ Open on Telegram
-</a>
+  <h3>CapCut</h3>
 
+  <p>
+    Video editing, effects, transitions and templates.
+  </p>
+
+  <div class="card-actions">
+    <button class="card-btn"
+            onclick="openModal('CapCut','Modern video editing tool with effects, transitions and templates.')">
+      Info
+    </button>
+
+    <button class="card-btn primary">
+      Open
+    </button>
+  </div>
 </div>
 
-<!-- TRUECALLER -->
 
-<div
-class="card"
-data-category="communication"
-data-name="truecaller caller id">
+<div class="card"
+     data-name="vn editor"
+     data-category="video">
 
-<div class="appIcon truecaller">
-☎
+  <div class="app-top">
+    <div class="app-icon">🎬</div>
+    <span class="badge">NEW</span>
+  </div>
+
+  <h3>VN Editor</h3>
+
+  <p>
+    Advanced timeline based video editing.
+  </p>
+
+  <div class="card-actions">
+    <button class="card-btn"
+            onclick="openModal('VN Editor','Advanced video editor with timeline controls and creative tools.')">
+      Info
+    </button>
+
+    <button class="card-btn primary">
+      Open
+    </button>
+  </div>
 </div>
 
-<h3>Truecaller</h3>
-<small>Caller ID & Protection</small>
 
-<span class="stars">
-★★★★★ 4.5
-</span>
+<div class="card"
+     data-name="snapseed"
+     data-category="editing">
 
-<p class="desc">
-Caller identification and spam protection
-features in one useful app.
-</p>
+  <div class="app-top">
+    <div class="app-icon">📷</div>
+    <span class="badge">EDITOR</span>
+  </div>
 
-<a
-class="telegram"
-href="https://t.me/saudchnnle"
-target="_blank">
-✈ Open on Telegram
-</a>
+  <h3>Snapseed</h3>
 
+  <p>
+    Powerful mobile photo editing experience.
+  </p>
+
+  <div class="card-actions">
+    <button class="card-btn"
+            onclick="openModal('Snapseed','Powerful photo editing application with professional controls.')">
+      Info
+    </button>
+
+    <button class="card-btn primary">
+      Open
+    </button>
+  </div>
 </div>
 
-<!-- CAPCUT -->
 
-<div
-class="card"
-data-category="video"
-data-name="capcut video editor">
+<div class="card"
+     data-name="movie hub"
+     data-category="utility">
 
-<div class="appIcon capcut">
-C
+  <div class="app-top">
+    <div class="app-icon">🍿</div>
+    <span class="badge">MEDIA</span>
+  </div>
+
+  <h3>Movie Hub</h3>
+
+  <p>
+    Your entertainment and media resource section.
+  </p>
+
+  <div class="card-actions">
+    <button class="card-btn"
+            onclick="openModal('Movie Hub','Entertainment and media resource section.')">
+      Info
+    </button>
+
+    <button class="card-btn primary">
+      Open
+    </button>
+  </div>
 </div>
 
-<h3>CapCut</h3>
-<small>Video Editor</small>
 
-<span class="stars">
-★★★★★ 4.5
-</span>
+<div class="card"
+     data-name="ai tools"
+     data-category="ai">
 
-<p class="desc">
-Create stylish videos with effects,
-transitions, filters and creative tools.
-</p>
+  <div class="app-top">
+    <div class="app-icon">🤖</div>
+    <span class="badge">AI</span>
+  </div>
 
-<a
-class="telegram"
-href="https://t.me/saudchnnle"
-target="_blank">
-✈ Open on Telegram
-</a>
+  <h3>AI Tools</h3>
 
+  <p>
+    Smart AI tools for productivity and creativity.
+  </p>
+
+  <div class="card-actions">
+    <button class="card-btn"
+            onclick="openModal('AI Tools','Useful artificial intelligence tools for creativity and productivity.')">
+      Info
+    </button>
+
+    <button class="card-btn primary">
+      Open
+    </button>
+  </div>
 </div>
 
-<!-- VN -->
-
-<div
-class="card"
-data-category="video"
-data-name="vn video editor">
-
-<div class="appIcon vn">
-VN
-</div>
-
-<h3>VN Video Editor</h3>
-<small>Professional Video Editor</small>
-
-<span class="stars">
-★★★★★ 4.6
-</span>
-
-<p class="desc">
-Clean timeline editing, transitions,
-effects and creative video controls.
-</p>
-
-<a
-class="telegram"
-href="https://t.me/saudchnnle"
-target="_blank">
-✈ Open on Telegram
-</a>
-
-</div>
-
-<!-- SNAPSEED -->
-
-<div
-class="card"
-data-category="photo"
-data-name="snapseed photo editor">
-
-<div class="appIcon snapseed">
-S
-</div>
-
-<h3>Snapseed</h3>
-<small>Photo Editor</small>
-
-<span class="stars">
-★★★★★ 4.5
-</span>
-
-<p class="desc">
-Powerful photo editing tools with
-professional filters and adjustments.
-</p>
-
-<a
-class="telegram"
-href="https://t.me/saudchnnle"
-target="_blank">
-✈ Open on Telegram
-</a>
-
-</div>
-
-<!-- MOVIE HUB -->
-
-<div
-class="card"
-data-category="entertainment"
-data-name="movie hub entertainment">
-
-<div class="appIcon movie">
-▶
-</div>
-
-<h3>Movie Hub</h3>
-<small>Entertainment</small>
-
-<span class="stars">
-★★★★★ 4.8
-</span>
-
-<p class="desc">
-Explore the entertainment collection
-available through the official channel.
-</p>
-
-<a
-class="telegram"
-href="https://t.me/saudchnnle"
-target="_blank">
-✈ Open on Telegram
-</a>
-
-</div>
-
-<!-- EXTRA APP 1 -->
-
-<div
-class="card"
-data-category="ai"
-data-name="ai tools assistant">
-
-<div class="appIcon ai">
-AI
-</div>
-
-<h3>AI Tools</h3>
-<small>AI Collection</small>
-
-<span class="stars">
-★★★★★ 4.8
-</span>
-
-<p class="desc">
-Explore useful AI tools and creative
-resources available in the collection.
-</p>
-
-<a
-class="telegram"
-href="https://t.me/saudchnnle"
-target="_blank">
-✈ Open on Telegram
-</a>
-
-</div>
-
-</div>
-
-<div
-class="noResult"
-id="noResult">
-😕 No app found
-</div>
 
 </section>
 
-<!-- ===== PREMIUM BOX ===== -->
 
-<div class="premium">
-
-<div class="premiumIcon">
-👑
+<div class="empty" id="empty">
+  🔍 No apps found
 </div>
 
-<h2>
-Welcome to Saud Web
-</h2>
 
-<p>
-A premium collection made with a modern
-dark interface, smooth animations and
-easy one-tap access to the Telegram channel.
-</p>
+<section class="premium">
 
-</div>
+  <h2>👑 Saud Premium Hub</h2>
 
-</div>
+  <p>
+    A professional collection of digital tools,
+    creative resources and technology updates.
+  </p>
+
+  <div class="premium-list">
+
+    <div class="premium-item">
+      ⚡ Fast & Simple
+    </div>
+
+    <div class="premium-item">
+      🔥 Regular Updates
+    </div>
+
+    <div class="premium-item">
+      🤖 AI Resources
+    </div>
+
+    <div class="premium-item">
+      🎨 Creative Tools
+    </div>
+
+  </div>
+
+</section>
 
 </main>
 
-<!-- ===== FOOTER ===== -->
 
-<footer>
-
-<p>
-© 2026 <strong>Saud Web</strong>
-</p>
-
-<p style="margin-top:8px">
-Premium App Experience • Made by Saud
-</p>
-
+<footer class="footer">
+  © 2026 Saud Web • All Rights Reserved
 </footer>
 
-<!-- ===== BOTTOM NAV ===== -->
 
-<div class="bottom">
+<div class="modal" id="modal"
+     onclick="closeModal(event)">
 
-<div class="bottomInner">
+  <div class="modal-box">
 
-<button
-class="nav"
-onclick="window.scrollTo({top:0,behavior:'smooth'})">
-<span>⌂</span>
-Home
-</button>
+    <div class="modal-head">
 
-<button
-class="nav"
-onclick="document.getElementById('apps').scrollIntoView({behavior:'smooth'})">
-<span>▦</span>
-Apps
-</button>
+      <h2 id="modalTitle">App</h2>
 
-<button
-class="nav"
-onclick="window.open('https://t.me/saudchnnle','_blank')">
-<span>✈</span>
-Telegram
-</button>
+      <button class="close"
+              onclick="closeModal()">
+        ✕
+      </button>
 
-<button
-class="nav"
-onclick="window.open('https://www.instagram.com/mr_s_a_u_d_007?igsh=MWdjZW05M2RhdHUzbg==','_blank')">
-<span>◎</span>
-Instagram
-</button>
+    </div>
 
+    <p id="modalText"></p>
+
+  </div>
 </div>
 
-</div>
+
+<nav class="bottom">
+
+  <a href="#">
+    <span>🏠</span>
+    Home
+  </a>
+
+  <a href="#apps">
+    <span>📱</span>
+    Apps
+  </a>
+
+  <a href="https://t.me/saudchnnle"
+     target="_blank">
+    <span>✈️</span>
+    Telegram
+  </a>
+
+  <a href="https://www.instagram.com/mr_s_a_u_d_007?igsh=MWdjZW05M2RhdHUzbg=="
+     target="_blank">
+    <span>📸</span>
+    Instagram
+  </a>
+
+</nav>
+
 
 <script>
 
-/* ===== SEARCH ===== */
+let currentCategory = "all";
+
 
 function searchApps(){
 
-let input=document
-.getElementById("search")
-.value
-.toLowerCase()
-.trim();
+  const input =
+    document.getElementById("search");
 
-let cards=document.querySelectorAll(".card");
+  const value =
+    input.value.toLowerCase().trim();
 
-let found=0;
+  document.getElementById("clearSearch").style.display =
+    value ? "block" : "none";
 
-cards.forEach(card=>{
-
-let name=card
-.getAttribute("data-name")
-.toLowerCase();
-
-if(name.includes(input)){
-
-card.style.display="block";
-found++;
-
-}else{
-
-card.style.display="none";
-
+  updateApps(value,currentCategory);
 }
 
-});
-
-document.getElementById("noResult").style.display=
-found===0 ? "block" : "none";
-
-}
-
-/* ===== CATEGORY FILTER ===== */
 
 function filterApps(category,button){
 
-document
-.querySelectorAll(".category")
-.forEach(x=>x.classList.remove("active"));
+  currentCategory = category;
 
-button.classList.add("active");
+  document.querySelectorAll(".cat")
+    .forEach(btn =>
+      btn.classList.remove("active")
+    );
 
-let cards=document.querySelectorAll(".card");
+  button.classList.add("active");
 
-let found=0;
+  const value =
+    document.getElementById("search")
+    .value
+    .toLowerCase()
+    .trim();
 
-cards.forEach(card=>{
+  updateApps(value,category);
+}
 
-let categories=card
-.getAttribute("data-category")
-.toLowerCase();
 
-if(
-category==="all" ||
-categories.includes(category)
-){
+function updateApps(search,category){
 
-card.style.display="block";
-found++;
+  const cards =
+    document.querySelectorAll(".card");
 
-}else{
+  let visible = 0;
 
-card.style.display="none";
+  cards.forEach(card => {
+
+    const name =
+      card.dataset.name.toLowerCase();
+
+    const cat =
+      card.dataset.category;
+
+    const matchSearch =
+      name.includes(search);
+
+    const matchCategory =
+      category === "all" ||
+      cat === category;
+
+    if(matchSearch && matchCategory){
+
+      card.style.display = "";
+
+      visible++;
+
+    }else{
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+  document.getElementById("count").textContent =
+    visible + (visible === 1 ? " App" : " Apps");
+
+  document.getElementById("empty").style.display =
+    visible ? "none" : "block";
+}
+
+
+function clearSearch(){
+
+  document.getElementById("search").value = "";
+
+  document.getElementById("clearSearch").style.display =
+    "none";
+
+  updateApps("",currentCategory);
+}
+
+
+function openModal(title,text){
+
+  document.getElementById("modalTitle").textContent =
+    title;
+
+  document.getElementById("modalText").textContent =
+    text;
+
+  document.getElementById("modal")
+    .classList.add("show");
+}
+
+
+function closeModal(event){
+
+  if(
+    !event ||
+    event.target.id === "modal"
+  ){
+
+    document.getElementById("modal")
+      .classList.remove("show");
+
+  }
 
 }
 
-});
 
-document.getElementById("noResult").style.display=
-found===0 ? "block" : "none";
+setTimeout(() => {
 
-document.getElementById("search").value="";
+  const intro =
+    document.querySelector(".intro");
 
-}
+  if(intro){
+    intro.remove();
+  }
 
-/* ===== INTRO CLEANUP ===== */
+},4000);
 
-setTimeout(function(){
-
-let intro=document.querySelector(".intro");
-
-if(intro){
-intro.remove();
-}
-
-},4500);
 
 </script>
 
